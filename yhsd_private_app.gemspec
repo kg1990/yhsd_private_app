@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "yhsd_private_app"
   spec.version       = YhsdPrivateApp::VERSION
   spec.authors       = ["jinhua"]
-  spec.email         = ["jinhua@yeezon.com"]
+  spec.email         = ["jinhua@yeezon.com kg19902933@gmail.com"]
   spec.summary       = %q{youhaosuda private app sdk for ruby.}
   spec.description   = %q{youhaosuda private app sdk for ruby.}
   spec.homepage      = "https://github.com/kg1990/yhsd_private_app"
