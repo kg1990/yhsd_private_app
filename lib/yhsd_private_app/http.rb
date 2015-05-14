@@ -68,6 +68,8 @@ module YhsdPrivateApp
       end
 
       def api_get(url)
+        validate_access_token
+
         opts = {:headers => {
           "X-API-ACCESS-TOKEN" => @access_token
         }}
@@ -76,6 +78,8 @@ module YhsdPrivateApp
       end
 
       def api_delete(url)
+        validate_access_token
+
         opts = {:headers => {
           "X-API-ACCESS-TOKEN" => @access_token
         }}
@@ -84,6 +88,8 @@ module YhsdPrivateApp
       end
 
       def api_post(url, req_body)
+        validate_access_token
+
         opts = {:headers => {
           "X-API-ACCESS-TOKEN" => @access_token,
           :content_type => :json,
@@ -94,6 +100,8 @@ module YhsdPrivateApp
       end
 
       def api_put(url, req_body)
+        validate_access_token
+        
         opts = {:headers => {
           "X-API-ACCESS-TOKEN" => @access_token,
           :content_type => :json,
@@ -103,6 +111,9 @@ module YhsdPrivateApp
         put(url, req_body.to_json, opts)
       end
 
+      def validate_access_token
+        raise MissingAccessToken if @access_token.to_s.empty?
+      end
     end
 
   end

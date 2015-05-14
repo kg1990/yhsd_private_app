@@ -1,12 +1,14 @@
 require "yhsd_private_app/version"
 require 'base64'
 require 'json'
+require 'yaml'
 
 module YhsdPrivateApp
   # Your code goes here...
 
   # Your code goes here...
 
+  require 'yhsd_private_app/exception'
   require 'yhsd_private_app/config'
   require 'yhsd_private_app/http'
 

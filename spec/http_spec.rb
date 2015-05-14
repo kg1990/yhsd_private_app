@@ -5,8 +5,24 @@ module YhsdPrivateApp
   describe HTTP do
 
     before(:each) do
+      YhsdPrivateApp::Config.initialize_connect!(
+        {
+          :app_key => '5c95892f62ce423a90726560f2de14f2', 
+          :app_secret => '33e910c2dbcd4f44881ad1d2c53ec2f8', 
+          :auth_url => 'http://apps.localtest.com/oauth2/token', 
+          :api_host => "http://api.public.com/v1/"
+        }
+      )
       YhsdPrivateApp::HTTP.access_token = YhsdPrivateApp.generate_access_token
       @api_host = YhsdPrivateApp::Config.settings[:api_host]
+    end
+
+    context "access_token is blank" do
+      it "raises" do
+        YhsdPrivateApp::HTTP.access_token = ''
+        path = "products"
+        expect {code, body, header = YhsdPrivateApp::HTTP.api_get(@api_host + path)}.to raise_error(MissingAccessToken)
+      end
     end
 
     context "get" do

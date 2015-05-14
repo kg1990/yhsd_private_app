@@ -20,17 +20,21 @@ module YhsdPrivateApp
       def load config_file
         if File.exist?(config_file)
           config_options = YAML.load_file(config_file)
-          config_options.symbolize_keys!
+          if config_options
+            config_options = config_options.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
+          else
+            config_options = {}
+          end
           initialize_connect!(config_options)
         else
-          raise Exception.new("youhaosuda app config yml file is not exist")
+          raise MissingConfigFile, config_file
         end
       end
 
       def initialize_connect! options = {}
         @settings = DEFAULT_OPTIONS.merge!(options)
-        REQUIRED_OPTION_KEYS.each do |opt|
-          raise Exception.new("Config key #{option} must exist!") unless @settings.has_key?(opt)
+        REQUIRED_OPTION_KEYS.each do |key|
+          raise MissingConfigKey, key if !@settings.has_key?(key) || @settings[key].to_s.empty?
         end
       end
 

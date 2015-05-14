@@ -1,0 +1,4 @@
+app_key: 'ec689b0eda4a42ec85c0c1747973e6d7'
+app_secret: 'f3b062a038fc424fa38b87ce78e5761c'
+auth_url: 'https://apps.youhaosuda.com/oauth2/token' 
+api_host: "https://api.youhaosuda.com/v1/"
