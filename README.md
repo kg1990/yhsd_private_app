@@ -38,7 +38,7 @@ Or install it yourself as:
   
 3.youhaosuda api接口调用
 
-  反馈结果统一为 code:http状态码 body:返回的内容字符串 header:返回的http头部
+  返回值统一为 code:http状态码 body:返回的内容字符串 header:返回的http头部
   
   code 200为正常访问，其余的例如400 422等为非正常状态码
   
