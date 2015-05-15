@@ -5,7 +5,6 @@ module YhsdPrivateApp
     class << self
 
       DEFAULT_OPTIONS = {
-        :grant_type      => "client_credentials",
         :content_type    => 'application/x-www-form-urlencoded',
         :auth_url        => "https://apps.youhaosuda.com/oauth2/token/",
         :api_host        => "https://api.youhaosuda.com/v1",

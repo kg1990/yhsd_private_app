@@ -15,18 +15,14 @@ module YhsdPrivateApp
   class << self
 
     def generate_access_token
-      app_key, app_secret = Config.settings[:app_key], Config.settings[:app_secret]
-      content = "#{app_key}:#{app_secret}"
-      encode = Base64.encode64(content).delete("\n\r")
-      authorization = "Basic #{encode}"
-
+      
       req_body = {
-        "grant_type" => Config.settings[:grant_type]
+        "grant_type" => 'client_credentials'
       }
 
       opts = {
         :headers =>{
-          "Authorization" => authorization,
+          "Authorization" => generate_authorization,
           "content_type" => Config.settings[:content_type]
         }
       }
@@ -37,6 +33,13 @@ module YhsdPrivateApp
       else
         raise Exception.new(body)
       end
+    end
+
+    def generate_authorization
+      app_key, app_secret = Config.settings[:app_key], Config.settings[:app_secret]
+      content = "#{app_key}:#{app_secret}"
+      encode = Base64.encode64(content).delete("\n\r")
+      "Basic #{encode}"
     end
 
   end
