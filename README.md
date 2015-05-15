@@ -24,7 +24,7 @@ Or install it yourself as:
 
   第一种方法：
   
-    YhsdPrivateApp::Config.initialize_connect({:app_key => your app key, :app_secret => you app secret})
+    YhsdPrivateApp::Config.initialize_connect!({:app_key => your app key, :app_secret => you app secret})
   
   第二种方法：
   
