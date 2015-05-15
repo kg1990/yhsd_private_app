@@ -1,6 +1,6 @@
 # YhsdPrivateApp
 
-友好速搭私有app sdf for ruby
+友好速搭私有app sdk for ruby
 
 ## Installation
 
