@@ -1,6 +1,6 @@
 # YhsdPrivateApp
 
-TODO: Write a gem description
+友好速搭私有app sdf for ruby
 
 ## Installation
 
