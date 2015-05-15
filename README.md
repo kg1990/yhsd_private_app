@@ -33,26 +33,26 @@ Or install it yourself as:
 2.获取access_token
 
   调用YhsdPrivateApp::generate_access_token获取到token后存放到本地数据库中
-    
+    access_token = YhsdPrivateApp::generate_access_token
     YhsdPrivateApp:HTTP.access_token = your token
   
 3.youhaosuda api接口调用
 
   (1) get 方法
   
-    YhsdPrivateApp::HTTP.api_get(request_path)
+    code, body, header = YhsdPrivateApp::HTTP.api_get(request_path)
     
   (2) post 方法
   
-    YhsdPrivateApp::HTTP.post(request_path, params)
+    code, body, header = YhsdPrivateApp::HTTP.post(request_path, params)
     
   (3) put 方法
   
-    YhsdPrivateApp::HTTP.put(request_path, params)
+    code, body, header = YhsdPrivateApp::HTTP.put(request_path, params)
     
   (4) delete 方法
   
-    YhsdPrivateApp::HTTP.put(request_path)
+    code, body, header = YhsdPrivateApp::HTTP.put(request_path)
 
 
 ## Contributing
