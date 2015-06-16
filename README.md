@@ -33,6 +33,7 @@ Or install it yourself as:
 2.获取access_token
 
   调用YhsdPrivateApp::generate_access_token获取到token后存放到本地数据库中
+  
     access_token = YhsdPrivateApp::generate_access_token
     YhsdPrivateApp:HTTP.access_token = your token
   
@@ -63,7 +64,7 @@ Or install it yourself as:
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/yhsd_private_app/fork )
+1. Fork it ( https://github.com/kg1990/yhsd_private_app/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
